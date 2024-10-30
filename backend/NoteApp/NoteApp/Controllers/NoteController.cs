@@ -29,7 +29,7 @@ public class NoteController : ControllerBase
 
         return Ok();
     }
-
+    
     [HttpGet]
     public async Task<IActionResult> Get([FromQuery]GetNotesRequest request, CancellationToken ct)
     {

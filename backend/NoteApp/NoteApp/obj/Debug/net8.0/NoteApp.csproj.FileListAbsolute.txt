@@ -52,3 +52,4 @@ D:\Projects\fullstack_projects\NoteApp\backend\NoteApp\NoteApp\obj\Debug\net8.0\
 D:\Projects\fullstack_projects\NoteApp\backend\NoteApp\NoteApp\obj\Debug\net8.0\NoteApp.pdb
 D:\Projects\fullstack_projects\NoteApp\backend\NoteApp\NoteApp\obj\Debug\net8.0\NoteApp.genruntimeconfig.cache
 D:\Projects\fullstack_projects\NoteApp\backend\NoteApp\NoteApp\obj\Debug\net8.0\ref\NoteApp.dll
+D:\Projects\fullstack_projects\NoteApp\backend\NoteApp\NoteApp\obj\Debug\net8.0\NoteApp.sourcelink.json
