@@ -52,4 +52,19 @@ public class NoteController : ControllerBase
 
         return Ok(new GetNotesResponse(noteDtos));
     }
+
+    [HttpDelete]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+    {
+        var noteToDelete = await _dbContext.Notes.FindAsync(new object[] { id }, ct);
+        if (noteToDelete == null)
+        {
+            return NotFound();
+        }
+
+        _dbContext.Notes.Remove(noteToDelete);
+        await _dbContext.SaveChangesAsync(ct);
+
+        return Ok();
+    }
 }
