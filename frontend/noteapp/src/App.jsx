@@ -1,9 +1,9 @@
 import './App.css';
-import CreateNoteForm from './components/CrateNoteForm';
+import CreateNoteForm from './components/CreateNoteForm';
 import Note from './components/Note';
 import Filters from './components/Filters';
 import { useEffect, useState } from 'react';
-import { fetchNotes, createNote } from './services/note';
+import { fetchNotes, createNote, deleteNote } from './services/note';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -28,6 +28,12 @@ function App() {
     setNotes(notes);
   }
 
+  const onDelete = async (id) => {
+    await deleteNote(id);
+    let notes = await fetchNotes(filter);
+    setNotes(notes);
+  }
+
   return (
     <section className="p-8 flex flex-row justify-start items-start gap-12">
       <div className="flex flex-col w-1/3 gap-10">
@@ -37,7 +43,7 @@ function App() {
         <ul className="flex flex-col gap-5 flex-1/2">
           {notes.map(note => (
             <li key={note.id}>
-              <Note title={note.title} description={note.description} date={note.createdAt} />
+              <Note id={note.id} title={note.title} description={note.description} date={note.createdAt} onDelete={onDelete} />
             </li>
           ))}
         </ul>
